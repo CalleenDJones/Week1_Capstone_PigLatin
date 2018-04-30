@@ -19,8 +19,6 @@ namespace Week1_Capstone_PigLatin
             string FirstCons;
             string PigConstantEnd = "ay";
             string Vowels = "aeiou";
-           
-
 
             //introduction
             Console.WriteLine("Welcome to the Pig Latin Translator!");
@@ -40,6 +38,7 @@ namespace Week1_Capstone_PigLatin
                     //Translate word beginning with a vowel to Pig Latin
                     PigVowelWord = WordEnglish + PigVowelEnd;
                     Console.WriteLine("Your translated word is: " + PigVowelWord);
+                   
                 }
                 else
                 {
@@ -54,13 +53,21 @@ namespace Week1_Capstone_PigLatin
                                 PigConsWord = WordEnglish.Substring(first, WordEnglish.Length - first);
                                 PigConsWord = PigConsWord + FirstCons + PigConstantEnd; // index, "ay
                                 Console.WriteLine("Your translated word is: " + PigConsWord);
+                               
                             }
+                            
                         }
                     }
+                    
                 }
+                //Allows user the opportunity to continue or to end
+                Console.WriteLine("Would you like to continue? Enter y or n?");
 
+                string GoOn = Console.ReadLine().ToLower();
+                Console.WriteLine("Press enter to continue.");
 
-
+                if (GoOn == "n")
+                    return;
                 Console.ReadKey();
             }
             
